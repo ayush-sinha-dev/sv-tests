@@ -129,6 +129,7 @@ for v in variants:
         extra_args += " -CFLAGS -I" + include_dir
         extra_args += " -CFLAGS -I" + testbench_dir
         extra_args += " -Wno-WIDTH"
+        extra_args += "\n:runner_arcilator_flags: -DTB_SILENT_FAIL"
 
         with open(common_defines, 'a') as cdf:
             cdf.write("`undef RV_ASSERT_ON")

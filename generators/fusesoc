@@ -151,4 +151,8 @@ for fusesoc_conf_file in fusesoc_conf_files:
                 yml_conf["compatible-runners"], yml_conf["type"]))
         for runner, flags in runner_flags.items():
             f.write(f":runner_{runner}_flags: {flags}\n")
+        if "runner_arcilator_flags" in yml_conf:
+            f.write(
+                f":runner_arcilator_flags: {yml_conf['runner_arcilator_flags']}\n"
+            )
         f.write("*/")
